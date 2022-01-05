@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI측정!!</title>
+</head>
+<body>
+    <div id=wrap>
+        <div>
+            <h1>나의 체질량지수 (BMI)</h1>
+            <a href="#" id="btnClose" title="닫기">닫기</a>
+        </div>
+        <form id="bmiCheckForm">
+            <h3>기본 신체정보</h3>
+            <label>키 : </label>
+            <input type="text" id="height">
+            <span>cm</span>
+            <span> / </span>
+            <label>몸무게 : </label>
+            <input type="text" id="weight">
+            <span>kg</span>
+            <span class="compute">
+                <input type="button" id="cal" value="계산">
+                <input type="reset" value="초기화">
+            </span>
+        </form>
+        <dl class="clearfix">
+            <dt>비만도 결과</dt>
+            <dd id=resultText"></dd>
+            <dt>BMI 지수</dt>
+            <dd id="bmiNumber"></dd>
+        </dl>
+        <ul>
+            <li>
+                <label>BMI</label>
+                <label class="dv1">18.5</label>
+                <label class="dv2">23</label>
+                <label>25.00</label>
+                <ul class="clearfix">
+                    <li class="low_weight">저체중</li>
+                    <li class="normal">정상</li>
+                    <li class="overWeight">과체중</li>
+                    <li class="obesity">비만</li>
+                </ul>
+                <label>체중</label>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- <script type="text/javascript">
+        $().ready(function() {
+	        this.title = $(".pop-header h1").text();
+	
+            $("#btnClose").click(function(){
+                window.close();
+        });
+	
+	$("#cal").click(function(){
+		if($("#height").val()==""){
+			alert("신장을 입력해주세요");
+			return false;
+		}
+		if($("#weight").val()==""){
+			alert("체중을 입력해주세요");
+			return false;
+		}
+		var len = parseFloat($('#height').val())/100;
+		var wet = parseFloat($('#weight').val());
+		var result = parseFloat(wet)/parseFloat(len*len);
+		var resultText = "";
+		if(result<18.5){
+			resultText = "저체중";
+		} else if(result<23){
+			resultText = "정상";
+		} else if(result<25){
+			resultText = "과체중";
+		} else{
+			resultText = "비만";
+		}
+		resultText += " 입니다.";
+		
+		$("#bmiNumber").text(result.toString().match(/^.*\.\d{2}/) || result);
+		$("#resultText").text(resultText);
+	});
+	
+	$(":reset").click(function(){
+		$("#bmiNumber").text("");
+		$("#resultText").text("");
+	});
+});
+
+    </script> -->
+</body>
+</html>
